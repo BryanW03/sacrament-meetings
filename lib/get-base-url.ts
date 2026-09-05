@@ -1,5 +1,5 @@
 import { headers } from 'next/headers';
- 
+
 // Server Components need an absolute URL to call our own API routes with
 // fetch(). This builds one from the incoming request headers so it works
 // the same way locally and once deployed on Vercel.
@@ -10,4 +10,3 @@ export async function getBaseUrl(): Promise<string> {
   const protocol = host.startsWith('localhost') ? 'http' : 'https';
   return `${protocol}://${host}`;
 }
- 
