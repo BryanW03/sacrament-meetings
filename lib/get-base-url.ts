@@ -1,4 +1,4 @@
-mport { headers } from 'next/headers';
+import { headers } from 'next/headers';
  
 // Server Components need an absolute URL to call our own API routes with
 // fetch(). This builds one from the incoming request headers so it works
