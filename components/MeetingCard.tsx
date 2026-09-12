@@ -16,16 +16,25 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
   return (
     <Link
       href={`/meetings/${meeting.id}`}
-      className="block border border-slate-200 rounded-lg p-4 hover:shadow-md transition-shadow"
+      className="flex items-stretch gap-4 border border-[var(--color-line)] bg-white hover:border-[#9c7a3c] transition-colors"
     >
-      <div className="flex items-center justify-between">
-        <span className="font-semibold text-slate-900">{meeting.date}</span>
-        <span className="text-xs uppercase tracking-wide text-slate-500">
-          {typeLabels[meeting.meetingType]}
-        </span>
+      <span className="w-1.5 bg-[#1e3a5f]" />
+      <div className="py-4 pr-4 flex-1">
+        <div className="flex items-baseline justify-between">
+          <span className="font-display text-lg text-[var(--color-ink)]">
+            {meeting.date}
+          </span>
+          <span className="text-xs text-[var(--color-muted)]">
+            {typeLabels[meeting.meetingType]}
+          </span>
+        </div>
+        <p className="text-sm text-[var(--color-muted)] mt-1">
+          Presiding: {meeting.presiding}
+        </p>
+        <p className="text-sm text-[var(--color-muted)]">
+          Speakers: {meeting.speakers.length}
+        </p>
       </div>
-      <p className="text-sm text-slate-600 mt-1">Presiding: {meeting.presiding}</p>
-      <p className="text-sm text-slate-600">Speakers: {meeting.speakers.length}</p>
     </Link>
   );
 }

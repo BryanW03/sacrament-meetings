@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
-    <footer className="bg-slate-100 text-slate-600 text-sm text-center py-4 mt-8 print:hidden">
-      <p>&copy; {new Date().getFullYear()} Sacrament Meeting Planner</p>
+    <footer className="border-t border-[var(--color-line)] text-[var(--color-muted)] text-xs text-center py-5 mt-12 print:hidden">
+      <p>Sacrament Meeting Planner &middot; {new Date().getFullYear()}</p>
     </footer>
   );
 }
