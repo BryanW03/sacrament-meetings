@@ -1,7 +1,7 @@
 export default function Loading() {
   return (
     <div className="flex justify-center py-16">
-      <p className="text-slate-500">Loading meetings...</p>
+      <p className="text-[var(--color-muted)]">Loading meetings...</p>
     </div>
   );
 }

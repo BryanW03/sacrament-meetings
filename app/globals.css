@@ -3,10 +3,21 @@
 @tailwind utilities;
 
 :root {
-  --color-primary: #1e293b;
-  --color-secondary: #64748b;
-  --color-accent: #0f766e;
-  --spacing-section: 2rem;
+  --color-ink: #292524;
+  --color-navy: #1e3a5f;
+  --color-navy-dark: #14283f;
+  --color-gold: #9c7a3c;
+  --color-paper: #fbf9f4;
+  --color-line: #ddd6c5;
+  --color-muted: #6b6459;
+}
+
+body {
+  background-color: var(--color-paper);
+}
+
+.font-display {
+  font-family: var(--font-lora), Georgia, serif;
 }
 
 @media print {

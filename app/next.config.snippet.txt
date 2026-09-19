@@ -1,7 +1,0 @@
-Agrega esto dentro de tu next.config.ts (dentro de nextConfig = { ... }):
-
-  images: {
-    dangerouslyAllowSVG: true,
-    contentDispositionType: 'attachment',
-    contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
-  },
