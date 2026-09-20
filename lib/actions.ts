@@ -17,8 +17,8 @@ const MeetingFormSchema = z.object({
     .string()
     .regex(/^\d{4}-\d{2}-\d{2}$/, 'Enter a valid date (YYYY-MM-DD).'),
   meetingType: z.enum(['testimony', 'regular', 'stake', 'general'], {
-    errorMap: () => ({ message: 'Choose a valid meeting type.' }),
-  }),
+  error: 'Choose a valid meeting type.',
+}),
   presiding: z.string().min(1, 'Presiding is required.'),
   conducting: z.string().min(1, 'Conducting is required.'),
   announcements: z.string().optional(),
