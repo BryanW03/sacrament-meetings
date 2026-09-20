@@ -34,3 +34,8 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_myugcv bvedium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+About This Project
+
+Sacrament Meeting Planner is a Next.js application built for bishoprics and branch leaders to plan, manage, and review sacrament meeting agendas. It supports four meeting types (testimony, regular, stake, and general conference) and tracks announcements, hymns, prayers, ward business, speakers, and musical numbers for each Sunday.
+
+The app is built with the Next.js App Router, TypeScript, and Tailwind CSS. Meeting data is currently served from an in-memory data module (lib/meetings-db.ts) through two API routes: GET /api/meetings (with an optional date filter) and GET /api/meetings/[id]. Pages fetch from these routes and render the results with typed components (MeetingCard, MeetingDetail).
