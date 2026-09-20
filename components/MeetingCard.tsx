@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { SacramentMeeting } from '@/lib/types';
+import { deleteMeeting } from '@/lib/actions';
 
 interface MeetingCardProps {
   meeting: SacramentMeeting;
@@ -14,12 +15,9 @@ const typeLabels: Record<SacramentMeeting['meetingType'], string> = {
 
 export default function MeetingCard({ meeting }: MeetingCardProps) {
   return (
-    <Link
-      href={`/meetings/${meeting.id}`}
-      className="flex items-stretch gap-4 border border-[var(--color-line)] bg-white hover:border-[#9c7a3c] transition-colors"
-    >
+    <div className="flex items-stretch gap-4 border border-[var(--color-line)] bg-white hover:border-[#9c7a3c] transition-colors">
       <span className="w-1.5 bg-[#1e3a5f]" />
-      <div className="py-4 pr-4 flex-1">
+      <Link href={`/meetings/${meeting.id}`} className="py-4 flex-1">
         <div className="flex items-baseline justify-between">
           <span className="font-display text-lg text-[var(--color-ink)]">
             {meeting.date}
@@ -34,7 +32,17 @@ export default function MeetingCard({ meeting }: MeetingCardProps) {
         <p className="text-sm text-[var(--color-muted)]">
           Speakers: {meeting.speakers.length}
         </p>
-      </div>
-    </Link>
+      </Link>
+      <form action={deleteMeeting} className="flex items-center pr-4">
+        <input type="hidden" name="id" value={meeting.id} />
+        <button
+          type="submit"
+          aria-label={`Delete meeting on ${meeting.date}`}
+          className="text-xs text-red-600 hover:underline"
+        >
+          Delete
+        </button>
+      </form>
+    </div>
   );
 }
